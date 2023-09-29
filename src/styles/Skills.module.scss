@@ -1,0 +1,82 @@
+.skillsList {
+  @include grid(3, $gap: $space-md);
+  justify-items: center;
+
+  li {
+    position: relative;
+
+    color: $base-dark;
+
+    svg {
+      width: $icon-lg;
+      aspect-ratio: 1;
+    }
+
+    &:hover {
+      &[data-skill="HTML"] {
+        color: #e34c26;
+      }
+
+      &[data-skill="CSS"] {
+        color: #1572b6;
+      }
+
+      &[data-skill="SASS"] {
+        color: #cb6699;
+      }
+
+      &[data-skill="JavaScript"] {
+        color: #f7df1e;
+      }
+
+      &[data-skill="TypeScript"] {
+        color: #007acc;
+      }
+
+      &[data-skill="React"] {
+        color: #61dafb;
+      }
+
+      &[data-skill="Next"] {
+        color: #000;
+      }
+
+      &[data-skill="Figma"] {
+        path:first-child {
+          fill: #1abcfe;
+        }
+
+        path:nth-child(2) {
+          fill: #0acf83;
+        }
+
+        path:nth-child(3) {
+          fill: #ff7262;
+        }
+
+        path:nth-child(4) {
+          fill: #f24e1e;
+        }
+
+        path:last-child {
+          fill: #a259ff;
+        }
+      }
+
+      &[data-skill="Git"] {
+        color: #f34f29;
+      }
+
+      &[data-skill="Github"] {
+        color: #181616;
+      }
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    .skillsList {
+      justify-items: start;
+      text-align: left;
+    }
+  }
+}

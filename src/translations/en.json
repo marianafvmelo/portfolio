@@ -1,0 +1,62 @@
+{
+  "pagesTitle": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Porfolio",
+    "contact": "Contact"
+  },
+  "metaTags": {
+    "homeDescription": "Front-End Developer | Specializing in React, JavaScript, HTML and CSS. Explore my portfolio to see projects and achievements. From Uberlândia-MG, Brazil."
+  },
+  "elementsTitle": {
+    "navToggle": {
+      "open": "Open navigation menu",
+      "close": "Close navigation menu"
+    },
+    "switchLanguage": {
+      "open": "Open language options",
+      "close": "Close language options"
+    }
+  },
+  "downloadResume": {
+    "text": "Resume",
+    "link": ""
+  },
+  "navLinks": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "About",
+      "path": "/about"
+    },
+    {
+      "name": "Portfolio",
+      "path": "/portfolio"
+    },
+    {
+      "name": "Contact",
+      "path": "/contact"
+    }
+  ],
+  "homeWelcome": {
+    "title": {
+      "firstLine": "Hello!",
+      "secondLine": "I'm Mariana Melo."
+    },
+    "paragraph": "A Front-End Developer from Brazil."
+  },
+  "homeAbout": {
+    "title": "About me",
+    "paragraph": "Front-End Developer, experienced in creating web applications using JavaScript, ReactJS, HTML, and CSS. I craft user-centered web solutions, prioritizing accessibility, performance, and UI design with clean code principles.",
+    "linkText": "More about me"
+  },
+  "homeProjects": {
+    "title": "A showcase of my webdevelopment skills"
+  },
+  "footer": {
+    "createdBy": "Created by: Mariana Melo",
+    "rights": "All rights reserved"
+  }
+}

@@ -1,0 +1,8 @@
+@import "./variables.scss";
+
+.tag {
+  padding: $space-xxs $space-sm;
+  border-radius: $border-radius-lg;
+  background: $base-light-secondary;
+  color: $base-dark;
+}

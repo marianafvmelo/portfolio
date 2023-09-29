@@ -1,0 +1,42 @@
+@import "./mixins.scss";
+
+.footer {
+  border-top: 1px solid $base-darker;
+
+  padding: $space-md 0;
+
+  margin-top: auto;
+  .footerContainer {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-sm;
+
+    .socialMedia {
+      display: flex;
+      gap: $space-sm;
+
+      a {
+        width: $icon-sm;
+        height: $icon-sm;
+
+        color: $base-darker;
+
+        transition: $animation-timing-faster;
+
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    .footerContainer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

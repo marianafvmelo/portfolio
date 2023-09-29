@@ -1,0 +1,44 @@
+@import "./variables.scss";
+
+@mixin for-mobile-and-tablet-only {
+  @media (max-width: 37.43em), (max-width: 75em) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 37.5em) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 56.25em) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 75em) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 112.5em) {
+    @content;
+  }
+}
+
+@mixin grid($columns, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin container {
+  width: min($width-container, 90%);
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}

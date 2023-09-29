@@ -1,0 +1,85 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius-lg;
+  background: #e3ddd8;
+
+  overflow: hidden;
+  color: $base-dark;
+
+  transform-origin: center;
+  transform: scale(1.001);
+  transition: $animation-timing;
+
+  figure {
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  figure,
+  .cardBody {
+    flex: 1;
+  }
+
+  .cardBody {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+    padding: $space-sm $space-sm;
+
+    .cardFooter {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: $space-sm;
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-xs;
+      }
+      .links {
+        display: flex;
+        gap: $space-xs;
+
+        a {
+          display: flex;
+          align-items: center;
+          font-weight: $fw-bold;
+          padding: $space-xs $space-sm;
+          gap: $space-xs;
+
+          border-radius: $border-radius-lg;
+
+          color: $base-darker;
+
+          svg {
+            width: $icon-sm;
+            height: $icon-sm;
+          }
+
+          &:hover {
+            background: $base-darker;
+            color: $base-light-primary;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+}

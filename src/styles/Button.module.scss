@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+.button {
+  padding: $space-sm;
+
+  border: 1px solid transparent;
+  border-radius: $border-radius-sm;
+
+  transition: $animation-timing;
+
+  &.primary {
+    border-color: $base-darker;
+  }
+
+  &:hover {
+    background: $base-darker;
+    color: $base-light-primary;
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px $base-dark;
+  }
+}

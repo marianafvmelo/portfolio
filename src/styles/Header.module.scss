@@ -1,0 +1,240 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: $height-header;
+
+  background: $base-light-primary;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  z-index: 9999;
+
+  .container {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: $space-huge;
+
+      nav {
+        ul {
+          list-style: none;
+
+          display: flex;
+
+          a {
+            font-weight: $fw-bold;
+
+            border-radius: $border-radius-sm;
+
+            opacity: 0.8;
+
+            transition: $animation-timing-faster;
+
+            &:hover,
+            &.active {
+              opacity: 1;
+            }
+
+            &:focus-visible {
+              outline: none;
+              box-shadow: 0 0 0 2px $base-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mainNavToggle,
+  .openResume {
+    cursor: pointer;
+  }
+
+  @include for-mobile-and-tablet-only {
+    nav {
+      .mainNavToggle {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+
+        width: $icon-md;
+        height: $icon-md;
+
+        display: flex;
+        align-items: center;
+
+        transform: translateY(-50%);
+
+        outline: none;
+
+        z-index: 9999;
+
+        .hamburgerIcon {
+          position: relative;
+
+          width: 100%;
+          height: 100%;
+
+          .part {
+            position: absolute;
+            left: 50%;
+
+            width: $width-vector-line;
+
+            display: block;
+
+            height: $height-vector-line;
+
+            border-radius: $border-radius-huge;
+            background: $base-dark;
+
+            transform: translate(-50%, -50%);
+            transform-origin: center;
+
+            transition: all $animation-timing;
+          }
+
+          .top {
+            top: 30%;
+          }
+
+          .middle {
+            top: 50%;
+
+            opacity: 1;
+          }
+
+          .bottom {
+            top: 70%;
+          }
+        }
+
+        &[aria-expanded="true"] {
+          .hamburgerIcon {
+            .part {
+              background: $base-light-primary;
+            }
+
+            .top {
+              top: 50%;
+              transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            .middle {
+              top: 50%;
+              transform: translate(-50%, -50%) rotate(180deg);
+              opacity: 0;
+            }
+
+            .bottom {
+              top: 50%;
+              transform: translate(-50%, -50%) rotate(-45deg);
+            }
+          }
+
+          &:focus-visible {
+            box-shadow: 0 0 0 4px $base-light-primary;
+          }
+        }
+      }
+
+      ul {
+        position: fixed;
+        inset: 0;
+
+        padding: min(30vh, 10rem) 2em;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: $space-xl;
+
+        font-size: $fs-subtitle-sm;
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        transform-origin: left center;
+        transition: all $animation-timing;
+
+        background: $overlay-blur;
+        color: $base-light-primary;
+
+        @include for-tablet-portrait-up {
+          gap: $space-xxl;
+        }
+
+        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+          background-color: $overlay-huge-blur;
+          -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+        }
+
+        &.isActive {
+          left: 0;
+
+          visibility: visible;
+          opacity: 1;
+          pointer-events: all;
+          display: flex;
+
+          transform: translateX(0);
+        }
+
+        li {
+          &:last-child {
+            margin-top: auto;
+
+            display: flex;
+            gap: $space-sm;
+          }
+        }
+
+        .languages {
+          margin-top: auto;
+          display: flex;
+          gap: $space-md;
+
+          button {
+            font-size: $fs-base-lg;
+            color: $base-light-primary;
+          }
+        }
+      }
+    }
+  }
+
+  @include for-desktop-up {
+    nav {
+      display: flex;
+      align-items: center;
+
+      .mainNavToggle {
+        display: none;
+      }
+
+      ul {
+        gap: 4.4rem;
+
+        li {
+          color: $base-darker;
+
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,222 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.homeContainer {
+  @include container;
+
+  section {
+    padding: $space-lg 0;
+  }
+
+  h1 {
+    font-size: $fs-title-sm;
+    margin-bottom: $space-xs;
+  }
+
+  h2 {
+    font-size: $fs-subtitle-sm;
+    margin-bottom: $space-xs;
+  }
+
+  h3 {
+    font-size: $fs-base-lg;
+    margin-bottom: $space-xxs;
+  }
+
+  .hero,
+  .about {
+    @include grid(1, $gap: $space-xl);
+
+    justify-items: center;
+  }
+
+  .hero,
+  .about,
+  .projects {
+    min-height: 100vh;
+
+    align-items: center;
+  }
+
+  .heroContent {
+    text-align: center;
+    align-self: end;
+  }
+
+  .heroImg {
+    position: relative;
+    width: 100%;
+    max-width: 537px;
+    aspect-ratio: 1;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .heroContent,
+  .aboutContent {
+    text-align: center;
+  }
+
+  .about {
+    align-items: center;
+
+    a {
+      position: relative;
+      padding-bottom: $space-xs;
+
+      text-decoration: none;
+
+      color: $base-dark;
+
+      span {
+        background-image: linear-gradient(0deg, $base-dark 0%, $base-dark 100%);
+
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: var(--background-size, 100%) 1px;
+        transition: background-size 0.2s linear var(--background-delay, 0.15s);
+
+        line-height: 20px;
+        transform: translateZ(0);
+      }
+
+      svg {
+        vertical-align: top;
+        display: inline;
+        line-height: 1;
+        width: 13px;
+        height: 20px;
+        position: relative;
+        left: -2px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        stroke: $base-dark;
+        stroke-dasharray: 7.95 30;
+        stroke-dashoffset: var(--stroke-dashoffset, 46);
+        transition: stroke-dashoffset var(--stroke-duration, 0.15s)
+          var(--stroke-easing, linear) var(--stroke-delay, 0s);
+      }
+
+      &:hover,
+      &:focus {
+        --background-size: 0%;
+        --background-delay: 0s;
+        --stroke-dashoffset: 26;
+        --stroke-duration: 0.3s;
+        --stroke-easing: cubic-bezier(0.3, 1.5, 0.5, 1);
+        --stroke-delay: 0.195s;
+      }
+    }
+  }
+
+  .aboutContent {
+    margin-bottom: $space-lg;
+
+    p {
+      margin-bottom: $space-lg;
+    }
+  }
+
+  .aboutImg {
+    position: relative;
+    width: 200px;
+    max-width: 350px;
+    aspect-ratio: 1;
+
+    border: 1px solid $base-dark;
+    border-radius: $border-radius-huge;
+    overflow: hidden;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .projects {
+    h2 {
+      text-align: center;
+    }
+
+    .cardsWrapper {
+      @include grid(1, $gap: $space-xl);
+
+      margin-top: $space-lg;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    h1 {
+      font-size: $fs-title;
+    }
+
+    .hero,
+    .about {
+      justify-items: center;
+      align-content: center;
+    }
+
+    .heroContent {
+      height: 200px;
+    }
+
+    .aboutImg {
+      width: 350px;
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    h2 {
+      font-size: $fs-subtitle;
+    }
+
+    h3 {
+      font-size: $fs-subtitle-sm;
+    }
+
+    .hero,
+    .about {
+      @include grid(2);
+      justify-items: center;
+      align-content: center;
+      grid-template-rows: auto;
+    }
+
+    .heroContent {
+      align-self: start;
+    }
+
+    .heroContent,
+    .aboutContent {
+      justify-items: start;
+      text-align: left;
+    }
+
+    .heroImg {
+      align-self: start;
+    }
+
+    .aboutImg {
+      justify-self: start;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    .projects {
+      .cardsWrapper {
+        @include grid(2, $gap: $space-lg);
+      }
+    }
+  }
+
+  @include for-desktop-up {
+    .projects {
+      .cardsWrapper {
+        @include grid(3, $gap: $space-lg);
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "pagesTitle": {
+    "home": "Home",
+    "about": "Sobre",
+    "portfolio": "Porfólio",
+    "contact": "Contato"
+  },
+  "metaTags": {
+    "homeDescription": "Desenvolvedora Front-End | Especializada em JavaScript, React, HTML e CSS. Explore meu portfólio para ver meus projetos e conquistas. De Uberlândia-MG, Brasil."
+  },
+  "elementsTitle": {
+    "navToggle": {
+      "open": "Abrir menu de navegação",
+      "close": "Fechar menu de navegação"
+    },
+    "switchLanguage": {
+      "open": "Abrir opções de idioma",
+      "close": "Fechar opções de idioma"
+    }
+  },
+  "downloadResume": {
+    "text": "Currículo",
+    "link": ""
+  },
+  "navLinks": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Sobre",
+      "path": "/about"
+    },
+    {
+      "name": "Portfolio",
+      "path": "/portfolio"
+    },
+    {
+      "name": "Contato",
+      "path": "/contact"
+    }
+  ],
+  "homeWelcome": {
+    "title": {
+      "firstLine": "Olá!",
+      "secondLine": "Sou a Mariana Melo."
+    },
+    "paragraph": "Desenvolvedora Front-End."
+  },
+  "homeAbout": {
+    "title": "Sobre mim",
+    "paragraph": "Desenvolvedora Front-End, experiente em criar aplicações web utilizando JavaScript, ReactJS, HTML e CSS. Crio soluções web centradas no usuário, priorizando acessibilidade, desempenho e design UI com princípios de código limpo.",
+    "linkText": "Mais sobre mim"
+  },
+  "homeProjects": {
+    "title": "Demonstração das minhas habilidades com desenvolvimento web"
+  },
+  "footer": {
+    "createdBy": "Criado por: Mariana Melo",
+    "rights": "Todos os direitos reservados"
+  }
+}
