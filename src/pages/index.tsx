@@ -10,7 +10,6 @@ import tavern from "../assets/images/tavern.jpg";
 import portfolio from "../assets/images/portfolio.jpg";
 
 import {
-  useElementsTitle,
   usePagesTitle,
   useMetaTags,
   useHomeWelcomeSection,
@@ -56,7 +55,6 @@ const projects = [
 ];
 
 export default function Home() {
-  const elementsTitle = useElementsTitle();
   const pagesTitle = usePagesTitle();
   const metaTags = useMetaTags();
   const welcomeSection = useHomeWelcomeSection();
