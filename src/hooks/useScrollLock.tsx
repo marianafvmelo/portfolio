@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useScrollLock = (isActive: Boolean) => {
+export const useScrollLock = (isActive: boolean) => {
   useEffect(() => {
     if (isActive) {
       const scrollY = window.scrollY;

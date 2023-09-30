@@ -1,6 +1,5 @@
 import styles from "../styles/Card.module.scss";
 
-import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { Tag } from "./Tag";
 import { ArrowDiagonalUp, GithubIcon } from "./SVGs/Icons";

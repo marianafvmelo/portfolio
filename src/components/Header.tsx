@@ -13,7 +13,7 @@ import {
 } from "../hooks/useTranslations";
 
 import { GithubIconTiny, LinkedinIcon } from "./SVGs/Icons";
-import { LanguagePicker } from "./LanguagePicker.1";
+
 import { Button } from "./Button";
 
 export const Header = () => {

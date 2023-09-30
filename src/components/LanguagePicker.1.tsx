@@ -39,6 +39,7 @@ export const LanguagePicker = () => {
           >
             {locales.map((locale: ILocale) => (
               <DropdownMenu.Item
+                key={locale.code}
                 className={styles.DropdownMenuItem}
                 onSelect={() => handleLocaleChange(locale.code)}
               >
