@@ -58,5 +58,34 @@
   "footer": {
     "createdBy": "Criado por: Mariana Melo",
     "rights": "Todos os direitos reservados"
-  }
+  },
+  "projects": [
+    {
+      "title": "Lhma Serviços Digitais",
+      "description": "Website para uma empresa focada em prestar serviços utilizando Power Platform e em Desenvolvimento de Sites.",
+      " linkPreview": "https://lhma.netlify.app",
+      "linkRepositorie": "",
+      "src": "lhma",
+      "color": "#1F1B32",
+      " tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "title": "Portfolio",
+      "description": "Meu portfolio.",
+      " linkPreview": "",
+      "linkRepositorie": "https://github.com/marianafvmelo/portfolio",
+      "src": "portfolio",
+      "color": "#E3DDD8",
+      " tags": ["Next.js", "SCSS", "TypeScript"]
+    },
+    {
+      "title": "Taverna do Levain",
+      "description": "Meu primeiro website desenvolvido para uma padaria de fermentação natural no estilo medieval. Atualmente, está passando por um processo de refatoração e atualização, utilizando novas tecnologias e aplicando melhorias para aprimorar a experiência do usuário e performance do site.",
+      " linkPreview": "",
+      "linkRepositorie": "",
+      "src": "tavern",
+      "color": "#1D1F1E",
+      " tags": []
+    }
+  ]
 }

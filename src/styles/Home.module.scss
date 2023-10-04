@@ -148,6 +148,17 @@
     }
   }
 
+  .scrollAnimation {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: $animation-timing;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   @include for-tablet-portrait-up {
     h1 {
       font-size: $fs-title;

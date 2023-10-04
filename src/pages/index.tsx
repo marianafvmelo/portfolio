@@ -20,13 +20,14 @@ import {
 import Link from "next/link";
 
 import { Card } from "@/components/Card";
-import { LanguagePicker } from "@/components/LanguagePicker.1";
+import { LanguagePicker } from "@/components/LanguagePicker";
+import { Animatable } from "@/components/Animatable";
 
 const projects = [
   {
-    title: "Lhma",
+    title: "Lhma Serviços Digitais",
     description:
-      "Website para uma startup de serviços digitais, focada em power apps, power automate.",
+      "Website para uma empresa focada em prestar serviços utilizando Power Platform e em Desenvolvimento de Sites.",
     linkPreview: "https://lhma.netlify.app",
     linkRepositorie: "",
     src: lhma,
@@ -34,23 +35,23 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
-    title: "Taverna do Levain",
-    description:
-      "Website de uma padaria de fermentação natural no estilo medieval.",
-    linkPreview: "https://lhma.netlify.app",
-    linkRepositorie: "https://lhma.netlify.app",
-    src: tavern,
-    color: "#1D1F1E",
-    tags: ["React", "CSS"],
-  },
-  {
     title: "Portfolio",
     description: "Meu portfolio.",
     linkPreview: "",
-    linkRepositorie: "https://lhma.netlify.app",
+    linkRepositorie: "https://github.com/marianafvmelo/portfolio",
     src: portfolio,
     color: "#E3DDD8",
     tags: ["Next.js", "SCSS", "TypeScript"],
+  },
+  {
+    title: "Taverna do Levain",
+    description:
+      "Meu primeiro website desenvolvido para uma padaria de fermentação natural no estilo medieval. Atualmente, está passando por um processo de refatoração e atualização, utilizando novas tecnologias e aplicando melhorias para aprimorar a experiência do usuário e performance do site.",
+    linkPreview: "",
+    linkRepositorie: "",
+    src: tavern,
+    color: "#1D1F1E",
+    tags: [],
   },
 ];
 
@@ -75,48 +76,58 @@ export default function Home() {
 
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <h1>
-              <div>{welcomeSection.title.firstLine}</div>
-              <div>{welcomeSection.title.secondLine}</div>
-            </h1>
-            <p>
-              <strong>{welcomeSection.paragraph}</strong>
-            </p>
+            <Animatable>
+              <h1>
+                <div>{welcomeSection.title.firstLine}</div>
+                <div>{welcomeSection.title.secondLine}</div>
+              </h1>
+              <p>
+                <strong>{welcomeSection.paragraph}</strong>
+              </p>
+            </Animatable>
           </div>
 
           <div className={styles.heroImg}>
-            <Image
-              src={developerIllustration}
-              alt="Developer Illustration"
-              fill
-              sizes="(min-width: 56.25em) 50vw, 100vw"
-            />
+            <Animatable card>
+              <Image
+                src={developerIllustration}
+                alt="Developer Illustration"
+                fill
+                sizes="(min-width: 56.25em) 50vw, 100vw"
+              />
+            </Animatable>
           </div>
         </section>
 
         <section className={styles.about}>
-          <div className={styles.aboutImg}>
-            <Image
-              src={caricature}
-              alt="Caricature"
-              fill
-              sizes="(min-width: 56.25em) 50vw, 100vw"
-            />
-          </div>
+          <Animatable card>
+            <div className={styles.aboutImg}>
+              <Image
+                src={caricature}
+                alt="Caricature"
+                fill
+                sizes="(min-width: 56.25em) 50vw, 100vw"
+              />
+            </div>
+          </Animatable>
           <div className={styles.aboutContent}>
-            <h2>{aboutSection.title}</h2>
-            <p>{aboutSection.paragraph}</p>
-            <Link href="/about">
-              <span>{aboutSection.linkText}</span>
-              <svg viewBox="0 0 13 20">
-                <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
-              </svg>
-            </Link>
+            <Animatable>
+              <h2>{aboutSection.title}</h2>
+              <p>{aboutSection.paragraph}</p>
+              <Link href="/about">
+                <span>{aboutSection.linkText}</span>
+                <svg viewBox="0 0 13 20">
+                  <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
+                </svg>
+              </Link>
+            </Animatable>
           </div>
         </section>
 
         <section className={styles.projects}>
-          <h2>{projectsSection.title}</h2>
+          <Animatable>
+            <h2>{projectsSection.title}</h2>
+          </Animatable>
           <div className={styles.cardsWrapper}>
             {projects.map((project) => (
               <Card
@@ -132,7 +143,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.contact}></section>
+        <section className={styles.contact} />
       </div>
     </>
   );

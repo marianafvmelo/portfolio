@@ -4,11 +4,14 @@
 .card {
   display: flex;
   flex-direction: column;
+
+  height: 100%;
+
   border-radius: $border-radius-lg;
   background: #e3ddd8;
+  color: $base-dark;
 
   overflow: hidden;
-  color: $base-dark;
 
   transform-origin: center;
   transform: scale(1.001);
@@ -34,6 +37,12 @@
     flex-direction: column;
     gap: $space-md;
     padding: $space-sm $space-sm;
+
+    > div {
+      h3 {
+        margin-bottom: $space-xs;
+      }
+    }
 
     .cardFooter {
       margin-top: auto;
@@ -79,7 +88,8 @@
   &:focus {
     transform: scale(1.1);
 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    box-shadow:
+      rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   }
 }
