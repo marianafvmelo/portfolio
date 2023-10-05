@@ -76,30 +76,25 @@ export default function Home() {
 
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <Reveal>
-              <h1>
-                <div>{welcomeSection.title.firstLine}</div>
-                <div>{welcomeSection.title.secondLine}</div>
-              </h1>
-            </Reveal>
-            <Reveal>
-              <p>
-                <strong>{welcomeSection.paragraph}</strong>
-              </p>
-            </Reveal>
+            <h1>
+              <div>{welcomeSection.title.firstLine}</div>
+              <div>{welcomeSection.title.secondLine}</div>
+            </h1>
+
+            <p>
+              <strong>{welcomeSection.paragraph}</strong>
+            </p>
           </div>
 
           <div className={styles.heroImg}>
-            <Reveal customClass={styles.imgReveal}>
-              <Image
-                src={developerIllustration}
-                alt="Developer Illustration"
-                width={537}
-                height={359}
-                placeholder="blur"
-                blurDataURL="../assets/images/dev.png"
-              />
-            </Reveal>
+            <Image
+              src={developerIllustration}
+              alt="Developer Illustration"
+              width={537}
+              height={359}
+              placeholder="blur"
+              blurDataURL="../assets/images/dev.png"
+            />
           </div>
         </section>
 
