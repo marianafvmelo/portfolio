@@ -24,8 +24,6 @@ export const LanguagePicker = () => {
     setCurrentLocale(extractedLocale);
   };
 
-  console.log(currentLocale);
-
   return (
     <DropdownMenu.Root open={open} onOpenChange={setOpen} modal={false}>
       <DropdownMenu.Trigger className={styles.DropdownMenuTrigger}>

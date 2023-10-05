@@ -21,7 +21,7 @@ import Link from "next/link";
 
 import { Card } from "@/components/Card";
 import { LanguagePicker } from "@/components/LanguagePicker";
-import { Animatable } from "@/components/Animatable";
+import { Reveal } from "@/components/Reveal";
 
 const projects = [
   {
@@ -76,58 +76,68 @@ export default function Home() {
 
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <Animatable>
+            <Reveal>
               <h1>
                 <div>{welcomeSection.title.firstLine}</div>
                 <div>{welcomeSection.title.secondLine}</div>
               </h1>
+            </Reveal>
+            <Reveal>
               <p>
                 <strong>{welcomeSection.paragraph}</strong>
               </p>
-            </Animatable>
+            </Reveal>
           </div>
 
           <div className={styles.heroImg}>
-            <Animatable card>
+            <Reveal customClass={styles.imgReveal}>
               <Image
                 src={developerIllustration}
                 alt="Developer Illustration"
-                fill
-                sizes="(min-width: 56.25em) 50vw, 100vw"
+                width={537}
+                height={359}
+                placeholder="blur"
+                blurDataURL="../assets/images/dev.png"
               />
-            </Animatable>
+            </Reveal>
           </div>
         </section>
 
         <section className={styles.about}>
-          <Animatable card>
+          <Reveal>
             <div className={styles.aboutImg}>
               <Image
                 src={caricature}
                 alt="Caricature"
-                fill
-                sizes="(min-width: 56.25em) 50vw, 100vw"
+                width={350}
+                height={350}
               />
             </div>
-          </Animatable>
+          </Reveal>
+
           <div className={styles.aboutContent}>
-            <Animatable>
+            <Reveal>
               <h2>{aboutSection.title}</h2>
+            </Reveal>
+            <Reveal>
               <p>{aboutSection.paragraph}</p>
+            </Reveal>
+            <Reveal>
               <Link href="/about">
                 <span>{aboutSection.linkText}</span>
                 <svg viewBox="0 0 13 20">
                   <polyline points="0.5 19.5 3 19.5 12.5 10 3 0.5" />
                 </svg>
               </Link>
-            </Animatable>
+            </Reveal>
           </div>
         </section>
 
         <section className={styles.projects}>
-          <Animatable>
+          <Reveal>
             <h2>{projectsSection.title}</h2>
-          </Animatable>
+          </Reveal>
+
           <div className={styles.cardsWrapper}>
             {projects.map((project) => (
               <Card

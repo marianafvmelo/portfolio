@@ -2,11 +2,6 @@
 @import "./mixins.scss";
 
 .card {
-  display: flex;
-  flex-direction: column;
-
-  height: 100%;
-
   border-radius: $border-radius-lg;
   background: #e3ddd8;
   color: $base-dark;
@@ -16,6 +11,12 @@
   transform-origin: center;
   transform: scale(1.001);
   transition: $animation-timing;
+
+  .cardWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
   figure {
     overflow: hidden;

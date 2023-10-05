@@ -7,10 +7,18 @@ interface IButtonProps {
   target?: string;
   text: string;
   icon?: JSX.Element;
+  download?: boolean;
   primary?: boolean;
 }
 
-export const Button = ({ link, target, text, icon, primary }: IButtonProps) => {
+export const Button = ({
+  link,
+  target,
+  text,
+  icon,
+  download = false,
+  primary,
+}: IButtonProps) => {
   return (
     <>
       {link ? (
@@ -20,6 +28,7 @@ export const Button = ({ link, target, text, icon, primary }: IButtonProps) => {
           className={`${styles.button} ${
             primary ? styles.primary : styles.secondary
           }`}
+          download={download}
         >
           <span>{text}</span>
           {icon && icon}

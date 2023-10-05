@@ -74,7 +74,13 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Button text={downloadResume.text} link={downloadResume.link} primary />
+        <Button
+          text={downloadResume.text}
+          link={downloadResume.link}
+          download={true}
+          target="_blank"
+          primary
+        />
 
         <div>
           <nav ref={navRef}>
@@ -89,9 +95,9 @@ export const Header = () => {
               <span className="hidden">Menu</span>
 
               <span className={styles.hamburgerIcon}>
-                <span className={`${styles.part} ${styles.top}`}></span>
-                <span className={`${styles.part} ${styles.middle}`}></span>
-                <span className={`${styles.part} ${styles.bottom}`}></span>
+                <span className={`${styles.part} ${styles.top}`} />
+                <span className={`${styles.part} ${styles.middle}`} />
+                <span className={`${styles.part} ${styles.bottom}`} />
               </span>
             </button>
 

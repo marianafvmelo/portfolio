@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { ArrowDiagonalUp, GithubIcon } from "./SVGs/Icons";
 import { Tag } from "./Tag";
 import { Button } from "./Button";
-import { Animatable } from "./Animatable";
+import { Reveal } from "./Reveal";
 
 interface ICard {
   title: string;
@@ -25,8 +25,8 @@ export const Card = ({
   tags,
 }: ICard) => {
   return (
-    <Animatable card>
-      <div className={styles.card}>
+    <Reveal customClass={styles.card}>
+      <div className={styles.cardWrapper}>
         <figure>
           <Image src={src} alt="" />
         </figure>
@@ -63,6 +63,6 @@ export const Card = ({
           </div>
         </div>
       </div>
-    </Animatable>
+    </Reveal>
   );
 };
