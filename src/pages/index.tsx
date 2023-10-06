@@ -1,13 +1,13 @@
-import styles from "../styles/Home.module.scss";
+import styles from "@/styles/Home.module.scss";
 
 import Head from "next/head";
 import Image from "next/image";
 
-import developerIllustration from "../assets/images/dev.png";
-import caricature from "../assets/images/caricature.png";
-import lhma from "../assets/images/lhma.jpg";
-import tavern from "../assets/images/tavern.jpg";
-import portfolio from "../assets/images/portfolio.jpg";
+import developerIllustration from "@/assets/images/dev.png";
+import caricature from "@/assets/images/caricature.png";
+import lhma from "@/assets/images/lhma.jpg";
+import tavern from "@/assets/images/tavern.jpg";
+import portfolio from "@/assets/images/portfolio.jpg";
 
 import {
   usePagesTitle,
@@ -15,7 +15,9 @@ import {
   useHomeWelcomeSection,
   useHomeAboutSection,
   useHomeProjectsSection,
-} from "../hooks/useTranslations";
+} from "@/hooks/useTranslations";
+
+import { useLocale } from "@/contexts/LocaleContext";
 
 import Link from "next/link";
 
@@ -25,9 +27,14 @@ import { Reveal } from "@/components/Reveal";
 
 const projects = [
   {
-    title: "Lhma Serviços Digitais",
-    description:
-      "Website para uma empresa focada em prestar serviços utilizando Power Platform e em Desenvolvimento de Sites.",
+    title: {
+      pt: "Lhma Serviços Digitais",
+      en: "Lhma Digital Services",
+    },
+    description: {
+      pt: "Website para uma empresa focada em prestar serviços utilizando Power Platform e em Desenvolvimento de Sites.",
+      en: "Website for a company focused on providing services using Power Platform and Website Development.",
+    },
     linkPreview: "https://lhma.netlify.app",
     linkRepositorie: "",
     src: lhma,
@@ -35,8 +42,14 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
-    title: "Portfolio",
-    description: "Meu portfolio.",
+    title: {
+      pt: "Portfólio",
+      en: "Portfolio",
+    },
+    description: {
+      pt: "Meu portfolio.",
+      en: "My portfolio",
+    },
     linkPreview: "",
     linkRepositorie: "https://github.com/marianafvmelo/portfolio",
     src: portfolio,
@@ -44,14 +57,19 @@ const projects = [
     tags: ["Next.js", "SCSS", "TypeScript"],
   },
   {
-    title: "Taverna do Levain",
-    description:
-      "Meu primeiro website desenvolvido para uma padaria de fermentação natural no estilo medieval. Atualmente, está passando por um processo de refatoração e atualização, utilizando novas tecnologias e aplicando melhorias para aprimorar a experiência do usuário e performance do site.",
+    title: {
+      pt: "Taverna do Levain",
+      en: "Levain's Tavern",
+    },
+    description: {
+      pt: "Meu primeiro website desenvolvido para uma padaria de fermentação natural no estilo medieval. Atualmente, está passando por um processo de refatoração e atualização, utilizando novas tecnologias e aplicando melhorias para aprimorar a experiência do usuário e performance do site.",
+      en: "My first website for a medieval-style natural fermentation bakery. Currently, I am redoing it using new technologies and implementing improvements.",
+    },
     linkPreview: "",
     linkRepositorie: "",
     src: tavern,
     color: "#1D1F1E",
-    tags: [],
+    tags: ["HTML", "CSS"],
   },
 ];
 
@@ -61,6 +79,8 @@ export default function Home() {
   const welcomeSection = useHomeWelcomeSection();
   const aboutSection = useHomeAboutSection();
   const projectsSection = useHomeProjectsSection();
+
+  const { currentLocale } = useLocale();
 
   return (
     <>
@@ -136,9 +156,9 @@ export default function Home() {
           <div className={styles.cardsWrapper}>
             {projects.map((project) => (
               <Card
-                key={project.title}
-                title={project.title}
-                description={project.description}
+                key={project.linkPreview}
+                title={project.title[currentLocale as "en" | "pt"]}
+                description={project.description[currentLocale as "en" | "pt"]}
                 linkPreview={project.linkPreview}
                 linkRepositorie={project.linkRepositorie}
                 src={project.src}

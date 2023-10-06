@@ -59,16 +59,6 @@ interface IFooter {
   rights: string;
 }
 
-interface IProject {
-  title: string;
-  description: string;
-  linkPreview?: string;
-  linkRepositorie?: string;
-  src: string;
-  color: string;
-  tags?: string[];
-}
-
 interface ITranslations {
   pagesTitle: IPagesTitle;
   metaTags: IMetaTags;
@@ -79,7 +69,6 @@ interface ITranslations {
   homeAbout: IHomeAbout;
   homeProjects: IHomeProjects;
   footer: IFooter;
-  projects: IProject[];
 }
 
 export function useTranslations(): ITranslations {
@@ -115,5 +104,3 @@ export const useHomeProjectsSection = (): IHomeProjects =>
   useTranslations().homeProjects;
 
 export const useFooter = (): IFooter => useTranslations().footer;
-
-export const useProjects = (): IProject[] => useTranslations().projects;
