@@ -13,7 +13,7 @@ export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>{pagesTitle.about} | Mariana Melo</title>
+        <title>{pagesTitle.portfolio}</title>
         <meta name="description" content={metaTags.homeDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

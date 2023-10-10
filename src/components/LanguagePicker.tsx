@@ -1,22 +1,18 @@
 import styles from "../styles/LanguagePicker.module.scss";
-import { useState } from "react";
+
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+
+import { useState } from "react";
+
 import { TranslateIcon } from "./SVGs/Icons";
 import { useLocale } from "@/contexts/LocaleContext";
-
-interface ILocale {
-  code: string;
-  name: string;
-}
-
-const locales: ILocale[] = [
-  { code: "en", name: "English" },
-  { code: "pt", name: "Portuguese" },
-];
+import { useLanguages } from "@/hooks/useTranslations";
 
 export const LanguagePicker = () => {
   const [open, setOpen] = useState(false);
   const { currentLocale, setCurrentLocale } = useLocale();
+
+  const languages = useLanguages();
 
   const handleLocaleChange = (newLocale: string) => {
     const extractedLocale = newLocale.split(" ")[0];
@@ -38,19 +34,17 @@ export const LanguagePicker = () => {
             sideOffset={5}
             collisionPadding={5}
           >
-            {locales.map((locale: ILocale) => (
+            {languages.map((language) => (
               <DropdownMenu.Item
-                key={locale.code}
+                key={language.code}
                 className={`${styles.DropdownMenuItem} ${
-                  locale.code === currentLocale ? styles.active : ""
+                  language.code === currentLocale ? styles.active : ""
                 }`}
-                onSelect={() => handleLocaleChange(locale.code)}
+                onSelect={() => handleLocaleChange(language.code)}
               >
-                {`${locale.code} - ${locale.name}`}
+                {`${language.code} - ${language.name}`}
               </DropdownMenu.Item>
             ))}
-
-            {/* <DropdownMenu.Arrow className={styles.DropdownMenuArrow} /> */}
           </DropdownMenu.Content>
         </DropdownMenu.Portal>
       )}

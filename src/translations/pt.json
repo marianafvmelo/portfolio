@@ -1,9 +1,9 @@
 {
   "pagesTitle": {
-    "home": "Home",
-    "about": "Sobre",
-    "portfolio": "Porfólio",
-    "contact": "Contato"
+    "home": "Home | Mariana Melo",
+    "about": "Sobre | Mariana Melo",
+    "portfolio": "Porfólio | Mariana Melo",
+    "contact": "Contato | Mariana Melo"
   },
   "metaTags": {
     "homeDescription": "Desenvolvedora Front-End | Especializada em JavaScript, React, HTML e CSS. Explore meu portfólio para ver meus projetos e conquistas. De Uberlândia-MG, Brasil."
@@ -22,6 +22,10 @@
     "text": "Currículo",
     "link": "/Curriculo_Mariana_Melo.pdf"
   },
+  "languages": [
+    { "code": "en", "name": "Inglês" },
+    { "code": "pt", "name": "Português" }
+  ],
   "navLinks": [
     {
       "name": "Home",

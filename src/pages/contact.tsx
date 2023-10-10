@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>{pagesTitle.contact} | Mariana Melo</title>
+        <title>{pagesTitle.contact}</title>
         <meta name="description" content={metaTags.homeDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

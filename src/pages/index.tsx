@@ -63,7 +63,7 @@ const projects = [
     },
     description: {
       pt: "Meu primeiro website desenvolvido para uma padaria de fermentação natural no estilo medieval. Atualmente, está passando por um processo de refatoração e atualização, utilizando novas tecnologias e aplicando melhorias para aprimorar a experiência do usuário e performance do site.",
-      en: "My first website for a medieval-style natural fermentation bakery. Currently, I am redoing it using new technologies and implementing improvements.",
+      en: "My first website developed for a natural fermentation bakery in a medieval style. Currently, it is in a process of refactoring and updating, using new technologies and implementing improvements to enhance the user experience and website performance.",
     },
     linkPreview: "",
     linkRepositorie: "",
@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{pagesTitle.home} | Mariana Melo</title>
+        <title>{pagesTitle.home}</title>
         <meta name="description" content={metaTags.homeDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 

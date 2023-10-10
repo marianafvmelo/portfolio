@@ -24,6 +24,11 @@ interface IElementsTitle {
   switchLanguage: IToggle;
 }
 
+interface ILocale {
+  code: string;
+  name: string;
+}
+
 interface IDownloadResume {
   text: string;
   link: string;
@@ -63,6 +68,7 @@ interface ITranslations {
   pagesTitle: IPagesTitle;
   metaTags: IMetaTags;
   elementsTitle: IElementsTitle;
+  languages: ILocale[];
   downloadResume: IDownloadResume;
   navLinks: INavLink[];
   homeWelcome: IHomeWelcome;
@@ -88,6 +94,8 @@ export const useMetaTags = (): IMetaTags => useTranslations().metaTags;
 
 export const useElementsTitle = (): IElementsTitle =>
   useTranslations().elementsTitle;
+
+export const useLanguages = (): ILocale[] => useTranslations().languages;
 
 export const useDownloadResume = (): IDownloadResume =>
   useTranslations().downloadResume;
